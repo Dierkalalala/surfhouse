@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:700|Roboto:900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/fonts.css">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+<div id="wrapper">
+    <div class="modal" ref="modal">
+        <div class="closeModal" ref="closeModal">&#10006;</div>
+        <div class="modal__inner">
+            <div class="modal__title">
+                it's alright that u want to check it out
+            </div>
+            <div class="modal__text">
+                Nevertheless should I use document.location.href ?
+                <br>
+                And also I would like to show u that i can use modals:)
+            </div>
+        </div>
+    </div>
+    <div class="preloader" id="preloader">
+    <div class="loader"></div>
+    </div>
+    <header class="header">
+        <div class="container">
+            <div class="header__top">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="media/logo.png" alt="">
+                    </a>
+                </div>
+                <div class="header__social-media-box">
+                    <a href="#" class="default-icon facebook-icon"></a>
+                    <a href="#" class="default-icon twitter-icon"></a>
+                    <a href="#" class="default-icon google-icon"></a>
+                    <a href="#" class="default-icon instagram-icon"></a>
+                    <a href="#" class="default-icon pinterest-icon"></a>
+                </div>
+            </div>
+            <div class="header__content">
+                <div class="header__block">
+                    <div class="header__block-title-box">
+                        <div class="header__block-title">
+                            welcome to surfhouse
+                        </div>
+                        <div class="header__block-text">
+                            The only online store you will ever need for all your windsurfing and kitesurfing and SUP
+                            needs
+                        </div>
+                    </div>
+                </div>
+                <div class="header__advertising-box">
+                    <div class="header__advertising-titlebox">
+                        <div class="header__advertising-title">
+                            JP Funride 2014
+                        </div>
+                        <div class="header__advertising-text">
+                            Super easy going freeride boards based on the X-Cite Ride shape concept with additional
+                            control and super easy jibing.
+                        </div>
+                    </div>
+                    <a href="#" class="header__btn">
+                        BUY NOW
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="innermain">
+                <div class="col_1">
+                    <div class="burger" ref="burger">
+                        <div class="burger__container" @click="openMenu">
+                            <div class="bar1"></div>
+                            <div class="bar2"></div>
+                            <div class="bar3"></div>
+                        </div>
+                    </div>
+                    <nav class="menu_active" ref="menu">
+                        <ul>
+                            <li class="menu__title">MENU <span class="close" @click="closeMenu">&#10006;</span></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">apparel</a></li>
+                            <li><a href="#">surf apparel</a></li>
+                            <li><a href="#">windsurf</a></li>
+                            <li><a href="#">kitesurf</a></li>
+                            <li><a href="#">accessories</a></li>
+                            <li><a href="#">sale</a></li>
+                            <li><a href="#">brands</a></li>
+                            <li><a href="#">blog</a></li>
+                            <li><a href="#">Gadgets</a></li>
+                            <li><a href="contact.html">cantact</a></li>
+                            <li><a href="#">Electronic Gadgets</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col_2">
+                    <section class="new__products">
+                        <div class="new__products-title">
+                            NEW PRODUCTS
+                        </div>
+                        <div class="new__product-items">
+                            <div class="new__product-item" v-for="item in newItems">
+                                <div class="product__item-inner">
+                                    <img :src="item.image" alt="">
+                                    <div class="new__product-item-costbox">
+                                        <div class="name">{{item.name}}</div>
+                                        <div class="cost">{{item.cost}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="top__products">
+                        <div class="new__products-title">
+                            TOP PRODUCTS
+                        </div>
+                        <div class="top__product-items">
+                            <div class="top__product-item" v-for="item in topItems">
+                                <div class="product__item-inner">
+                                    <img :src="item.image" alt="">
+                                    <div class="new__product-item-costbox">
+                                        <div class="name">{{item.name}}</div>
+                                        <div class="cost">{{item.cost}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="top__products">
+                        <div class="new__products-title">
+                            SALE PRODUCTS
+                        </div>
+                        <div class="top__product-items">
+                            <div class="top__product-item" v-for="item in SaleProducts">
+                                <div class="product__item-inner">
+                                    <img :src="item.image" alt="">
+                                    <div class="new__product-item-costbox">
+                                        <div class="name">{{item.name}}</div>
+                                        <div class="cost">{{item.cost}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <section class="brand">
+
+                <div class="brand-box">
+                    <span v-for="brand in 5">BRAND NAME</span>
+                </div>
+
+            </section>
+        </div>
+        <div class="socials">
+            <div class="container">
+                <div class="socials__inner">
+                    <div class="socials__title">
+                        Instagram feed: #surfhouse
+                    </div>
+                    <div class="socials__images">
+                        <img src="media/image.jpg" alt="">
+                        <img src="media/image.jpg" alt="">
+                        <img src="media/image.jpg" alt="">
+                        <img src="media/image.jpg" alt="">
+                        <img src="media/image.jpg" alt="">
+                        <img src="media/image.jpg" alt="">
+                    </div>
+                    <div class="socials__big-blocks">
+                        <div class="socials__big-block">
+                            <div class="socials__big-block-fb">
+
+                            </div>
+                        </div>
+                        <div class="socials__big-block">
+                            <div class="socials__big-block-twitter">
+
+                            </div>
+                        </div>
+                        <div class="socials__big-block">
+                            <div class="socials__big-block-pinterest">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer_column footer_col1">
+                    <div class="footer__col-title">
+                        Category
+                    </div>
+                    <div class="footer__col-content">
+                        <ul>
+                            <li><a href="">Home</a></li>
+                            <li><a href="">about us</a></li>
+                            <li><a href="">Features</a></li>
+                            <li><a href="">new collections</a></li>
+                            <li><a href="">blog</a></li>
+                            <li><a href="">contact</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer_column footer_col2">
+                    <div class="footer__col-title">
+                        Our Account
+                    </div>
+                    <div class="footer__col-content">
+                        <ul>
+                            <li><a href="">Your Account</a></li>
+                            <li><a href="">Personal information</a></li>
+                            <li><a href="">Addresses</a></li>
+                            <li><a href="">Discount</a></li>
+                            <li><a href="">Orders history</a></li>
+                            <li><a href="">Addresses</a></li>
+                            <li><a href="">Search Terms</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="footer_column footer_col3">
+                    <div class="footer__col-title">
+                        Our Support
+                    </div>
+
+                    <div class="footer__col-content">
+                        <ul>
+                            <li><a href="">Site Map</a></li>
+                            <li><a href="">Search Terms</a></li>
+                            <li><a href="">Advanced Search</a></li>
+                            <li><a href="">Mobile</a></li>
+                            <li><a href="">Contact Us</a></li>
+                            <li><a href="">Mobile</a></li>
+                            <li><a href="">Addresses</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer_column footer_col4">
+                    <div class="footer__col-title">
+                        Newsletter
+                    </div>
+                    <div class="footer__col-content">
+                        <div class="footer__col-text pr3">
+                            Join thousands of other people subscribe to our news
+                        </div>
+                        <div class="form-box">
+                            <input type="text" placeholder="Enter your email">
+                            <button>
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer_column footer_col5">
+                    <div class="footer__col-title">
+                        About us
+                    </div>
+                    <div class="footer__col-content">
+                        <div class="footer__col-text ">
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                            Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+                            ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+                        </div>
+                        <div class="footer__col-phone">
+                            Phone: 1-999-342-9876
+                        </div>
+                        <div class="footer__col-mail">
+                            e-mail: info@surfhouse.com
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__copyright">
+            &copy; 2014 SURFHOUSE. All rights reserved - Designed by theuncreativelab.com
+        </div>
+    </footer>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="script/main.js"></script>
+</body>
+</html>

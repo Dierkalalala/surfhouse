@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:700|Roboto:900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/fonts.css">
+    <link rel="stylesheet" href="styles/contact.css">
+</head>
+<body>
+<div id="contact">
+    <header class="header">
+        <div class="container">
+            <div class="header__top">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="media/logo.png" alt="">
+                    </a>
+                </div>
+
+                <div class="header__social-media-box">
+                    <a href="#" class="default-icon facebook-icon"></a>
+                    <a href="#" class="default-icon twitter-icon"></a>
+                    <a href="#" class="default-icon google-icon"></a>
+                    <a href="#" class="default-icon instagram-icon"></a>
+                    <a href="#" class="default-icon pinterest-icon"></a>
+                </div>
+            </div>
+            <div class="header__content">
+                <div class="header__block">
+                    <div class="header__block-title-box">
+                        <div class="header__block-title">
+                            welcome to surfhouse
+                        </div>
+                        <div class="header__block-text">
+                            The only online store you will ever need for all your windsurfing and kitesurfing and SUP
+                            needs
+                        </div>
+                    </div>
+                </div>
+                <div class="header__advertising-box">
+                    <div class="header__advertising-titlebox">
+                        <div class="header__advertising-title">
+                            JP Funride 2014
+                        </div>
+                        <div class="header__advertising-text">
+                            Super easy going freeride boards based on the X-Cite Ride shape concept with additional
+                            control and super easy jibing.
+                        </div>
+                    </div>
+                    <a href="#" class="header__btn">
+                        BUY NOW
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="container__inner">
+                <div class="col_1">
+                    <div class="burger" ref="burger">
+                        <div class="burger__container" @click="openMenu">
+                            <div class="bar1"></div>
+                            <div class="bar2"></div>
+                            <div class="bar3"></div>
+                        </div>
+                    </div>
+                    <nav class="menu_active" ref="menu">
+                        <ul>
+                            <li class="menu__title">MENU <span class="close" @click="closeMenu">&#10006;</span></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">apparel</a></li>
+                            <li><a href="#">surf apparel</a></li>
+                            <li><a href="#">windsurf</a></li>
+                            <li><a href="#">kitesurf</a></li>
+                            <li><a href="#">accessories</a></li>
+                            <li><a href="#">sale</a></li>
+                            <li><a href="#">brands</a></li>
+                            <li><a href="#">blog</a></li>
+                            <li><a href="#">Gadgets</a></li>
+                            <li><a href="#" @click.prevent="">cantact</a></li>
+                            <li><a href="#">Electronic Gadgets</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="col_2">
+                    <div class="form">
+                        <form action="" @submit.prevent="onSubmit">
+                            <label>
+                                <p>FULL NAME</p>
+                                <input v-model="name" type="text" placeholder="e.g.  robert smith">
+                            </label>
+                            <label>
+                                <p>EMAIL</p>
+                                <input v-model="email" type="text" placeholder="e.g. name@nome.com">
+                            </label>
+                            <label>
+                                <p>COMPANY</p>
+                                <input v-model="company" type="text" placeholder="e.g. your company (optional)">
+                            </label>
+                            <label>
+                                <p>SUBJECT</p>
+                                <input v-model="subject" type="text" placeholder="e.g. info">
+                            </label>
+                            <label>
+                                <p>MESSAGE</p>
+                                <textarea v-model="message"></textarea>
+                            </label>
+                            <input type="submit" value="Submit"
+                                   disabled
+                                   v-if="name && email && company && subject && !message">
+                            <input type="submit" value="Submit"
+                                   v-if="name && email && company && subject && message">
+                        </form>
+                    </div>
+                    <div class="show__form" v-if="name">
+                        <p>{{name}}</p>
+                        <p>{{email}}</p>
+                        <p>{{company}}</p>
+                        <p>{{subject}}</p>
+                        <pre>{{message}}</pre>
+                    </div>
+                    <div class="adress">
+                        <div class="adress__title">
+                            Address
+                        </div>
+                        <div class="adress__text">
+                            Ut interdum tristique est com
+                            modo pharetra.
+                            <br>
+                            Lorem Ipsum is simply dummy
+                            text of the printing and over
+                        </div>
+                        <div class="adress__phone">
+                            1-900-324-9876
+                        </div>
+                        <div class="adress__email">
+                            info@surfhouse.com
+                        </div>
+                        <div class="adress__article">
+                            If you have questions about your order or need any general information our customer service
+                            team will be happy to assist you.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="script/contact.js"></script>
+
+</body>
+</html>
